@@ -21,7 +21,8 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new Item();
+        $item->fill($request->only($item->getFillable()))->save();
     }
 
     /**
